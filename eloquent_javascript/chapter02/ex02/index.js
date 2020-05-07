@@ -1,5 +1,5 @@
 
-for(let i=1; i<=100; i++) {
+for (let i=1; i<=100; i++) {
   if (i % 3 == 0 && i % 5 == 0)
     console.log("FizzBuzz");
   else if (i % 3 == 0)
@@ -11,8 +11,7 @@ for(let i=1; i<=100; i++) {
 }
 
 // Another solution
-let word = ""
-for(let j=1; j<=100; j++) {
+for (let j = 1, word = ""; j <= 100; j++) {
   word = ""
   if (j % 3 == 0)
     word = "Fizz";
