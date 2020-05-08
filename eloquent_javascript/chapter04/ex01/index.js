@@ -2,7 +2,7 @@
 // The sum of a range
 //
 
-let range = (start, end, step = 1) => {
+let range = (start, end, step = start < end ? 1 : -1) => {
   let out = [];
   let i = start;
   while ((step > 0 && i <= end) || (step < 0 && i >= end)) {
@@ -13,9 +13,9 @@ let range = (start, end, step = 1) => {
 }
 
 let sum = numbers => {
-  total = 0;
+  let total = 0;
   for (let e of numbers)
-    total += Number(e);
+    total += e;
   return total
 }
 
