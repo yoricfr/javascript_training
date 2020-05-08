@@ -6,10 +6,12 @@ let deepEqual = (a, b) => {
   if (a === null || b === null) {
     return a === b;
   } else if (typeof(a) === "object" && typeof(b) === "object") {
-    ka = Object.keys(a);
+    let ka = Object.keys(a);
+    let kb = Object.keys(b);
+    if (ka.length != kb.length) return false;
     let equal = true;
     for (let k of ka) {
-      if (!b[k]) return false;
+      if (!kb.includes(k)) return false;
       equal = equal && deepEqual(a[k], b[k]);
     }
     return equal;
