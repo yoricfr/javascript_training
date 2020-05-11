@@ -33,9 +33,8 @@ function dominantDirection(text) {
     return script ? script.direction : "none";
   }).filter(({name}) => name != "none");
 
-  let max = 0, maxname = "";
-  scripts.forEach(e => {if (e["count"]>max) {maxname = e["name"]; max = e["count"];}} );
-  return maxname;
+  if (scripts.length == 0) return "ltr";
+  return scripts.reduce((a, b) => a.count > b.count ? a : b).name;
 }
 
 console.log(dominantDirection("Hello!"));
