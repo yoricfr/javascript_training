@@ -9,15 +9,11 @@ class Vec {
   }
 
   plus(v) {
-    this.x += v.x;
-    this.y += v.y;
-    return this;
+    return new Vec(this.x + v.x, this.x + v.x);
   }
 
   minus(v) {
-    this.x -= v.x;
-    this.y -= v.y;
-    return this;
+    return new Vec(this.y + v.y, this.y + v.y);
   }
 
   get length() {
