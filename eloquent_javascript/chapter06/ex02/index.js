@@ -16,8 +16,9 @@ class Group {
 
   delete(e) {
     if (this.data.includes(e)) {
-      let i = this.data.indexOf(e);
-      this.data = this.data.slice(0, i).concat(this.data.slice(i+1));
+      //let i = this.data.indexOf(e);
+      //this.data = this.data.slice(0, i).concat(this.data.slice(i+1));
+      this.data.filter(a => e !== a);
     }
     return this;
   }
