@@ -4,21 +4,26 @@
 
 class Group {
   constructor() {
-    this.data = new Set();
+    this.data = [];
   }
 
   add(e) {
-    this.data.add(e);
+    if (!this.data.includes(e)) {
+      this.data.push(e);
+    }
     return this;
   }
 
   delete(e) {
-    this.data.delete(e);
+    if (this.data.includes(e)) {
+      let i = this.data.indexOf(e);
+      this.data = this.data.slice(0, i).concat(this.data.slice(i+1));
+    }
     return this;
   }
 
   has(e) {
-    return this.data.has(e);
+    return this.data.includes(e);
   }
 
   static from(iterable) {
